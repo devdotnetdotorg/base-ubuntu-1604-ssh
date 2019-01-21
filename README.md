@@ -30,6 +30,8 @@ login root
 
 password 123456
 
+Docker Hub: https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
+
 # Образ Ubuntu 16.04 с возможностью подключения по SSH
 
 Возможности:
@@ -60,3 +62,5 @@ password 123456
 Логин root
 
 Пароль 123456
+
+Docker Hub: https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
