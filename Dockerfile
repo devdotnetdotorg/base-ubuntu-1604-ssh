@@ -24,7 +24,7 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 # Password for root
 ENV PASSWORD root 
 #Set password
-RUN echo 'root:$PASSWORD' |chpasswd
+RUN echo 'root:'$PASSWORD |chpasswd
 RUN mkdir /root/.ssh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #Folder root
