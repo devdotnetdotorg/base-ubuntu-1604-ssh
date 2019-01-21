@@ -1,5 +1,6 @@
 # Ubuntu-1604
 Docker base image Ubuntu 16.04 with SSH started
+
 Features:
 1) SSH. Allow SSH connection to the container.
 2) Midnight Commander (Visual file manager). Site: http://midnight-commander.org/. Start: $mc
@@ -29,9 +30,8 @@ login root
 
 password 123456
 
-====================
+# Образ Ubuntu 16.04 с возможностью подключения по SSH
 
-Образ Ubuntu 16.04 с возможностью подключения по SSH
 Возможности:
 1) SSH. Подключение без ограничений.
 2) Midnight Commander (визуальный файловый менеджер). Сайт: http://midnight-commander.org/. Запуск: $mc
