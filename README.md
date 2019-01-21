@@ -16,11 +16,11 @@ WARNING! Password is 123456 as sample. You must set a different password, not 12
 
 Run Container:
 
-`docker run -d --name ubuntu -p 222:22 -e PASSWORD=123456 devdotnetdotorg/ubuntu-1604-ssh`
+`docker run -d --name ubuntu -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
 For network is mynetwork:
 
-`docker run -d --name ubuntu --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 devdotnetdotorg/ubuntu-1604-ssh`
+`docker run -d --name ubuntu --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
 Connect to container:
 
@@ -49,11 +49,11 @@ Docker Hub: https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
 
 Запуск контейнера:
 
-`docker run -d --name ubuntu -p 222:22 -e PASSWORD=123456 devdotnetdotorg/ubuntu-1604-ssh`
+`docker run -d --name ubuntu -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
 Запуск контейнера для сети mynetwork:
 
-`docker run -d --name ubuntu --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 devdotnetdotorg/ubuntu-1604-ssh`
+`docker run -d --name ubuntu --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
 Подключение к контейнеру:
 
