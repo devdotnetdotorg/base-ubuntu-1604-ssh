@@ -24,48 +24,12 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 # Password for root
 ENV PASSWORD root 
 #Set password
- 
- 
-
-RUN echo 'root:root' |chpasswd
-
-
-
+RUN echo 'root:$PASSWORD' |chpasswd
 RUN mkdir /root/.ssh
-
-RUN apt-get clean && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-EXPOSE 22
-
-CMD ["/usr/sbin/sshd", "-D"]
-
-
-
-
-
-
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #Folder root
 VOLUME /root
 #port SSH
 EXPOSE 22
-
 # Run SSH
 CMD ["/usr/sbin/sshd", "-D"]
-
-
-############################################
-
- 
-# Install Vim and Emacs
-RUN apt-get install -y vim
-RUN apt-get install -y emacs
-
-RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config 
-
-RUN sed -ri 's/^#PasswordAuthentication/PasswordAuthentication/' /etc/ssh/sshd_config
-RUN sed -ri 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-
-
