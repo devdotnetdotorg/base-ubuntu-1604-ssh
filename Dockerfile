@@ -1,9 +1,6 @@
-
-!!!!
-
 # Base container Ubuntu with ssh
 # Allow SSH connection to the container
-# Installed mc,htop, language-pack-ru ru_RU.UTF8, zip
+# Installed mc,htop
 
 FROM ubuntu:16.04
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
