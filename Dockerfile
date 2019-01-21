@@ -1,3 +1,6 @@
+
+!!!!
+
 # Base container Ubuntu with ssh
 # Allow SSH connection to the container
 # Installed mc,htop, language-pack-ru ru_RU.UTF8, zip
@@ -6,9 +9,7 @@ FROM ubuntu:16.04
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
 
 RUN apt-get update
-RUN apt-get install -y mc htop zip
-# Gen ru_RU
-RUN apt-get install -y language-pack-ru && locale-gen ru_RU && locale-gen ru_RU.UTF-8 && update-locale 
+RUN apt-get install -y mc htop 
 # SSH
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
