@@ -27,8 +27,8 @@ ENV PASSWORD root
 RUN echo 'root:'$PASSWORD |chpasswd
 RUN mkdir /root/.ssh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-#Folder root
-VOLUME /root
+#Folder Data
+VOLUME /data
 #port SSH
 EXPOSE 22
 # Run SSH
