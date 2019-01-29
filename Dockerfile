@@ -1,6 +1,7 @@
 # Base container Ubuntu with ssh
 # Allow SSH connection to the container
 # Installed mc,htop
+########################from linux
 
 FROM ubuntu:16.04
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
