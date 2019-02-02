@@ -68,36 +68,41 @@ Start: `$ htop`
 
 If you have questions on how to use the image, please send mail to anton@devdotnet.org
 
->>>>
-# Образ Ubuntu 16.04 с возможностью подключения по SSH
 
-Возможности:
-1) SSH. Подключение без ограничений.
-2) Midnight Commander (визуальный файловый менеджер). Сайт: http://midnight-commander.org/. Запуск: $mc
-3) htop (интерактивный менеджер запущенных процессов. Аналог Менеджер задач в ОС Windows). Сайт: http://hisham.hm/htop/. Запуск: $htop
+# Docker образ Ubuntu 16.04 с возможностью подключения по SSH
 
-Для SSH используется порт 22
+Официальный образ Ubuntu 16.04 с установленным sshd. Авторизация по паролю.
 
+## Возможности
+
+* SSH. Подключение без ограничений.
+* Midnight Commander (визуальный файловый менеджер).
+* htop (интерактивный менеджер запущенных процессов. Аналог Менеджер задач в ОС Windows).
+
+## Запуск
+ 
+### Переменные образа
+ 
 Переменная для установки пароля пользователя root:
 
 `-e PASSWORD=123456`
 
-ВНИМАНИЕ! Пароль 123456 указан для примера. Вам необходимо вместо 123456, указать любой свой другой пароль
+**ВНИМАНИЕ! Пароль 123456 указан для примера. Вам необходимо вместо 123456, указать любой свой другой пароль**
 
-Запуск контейнера:
+Запуск контейнера, внешний порт 222, пароль для пользователя root - 654321, том данных ubuntu-data для передачи данных из/в окружение контейнера:
 
-`docker run -d --name ubuntu -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
+`$ docker run -d --name ubuntu-sshd -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
 Запуск контейнера для сети mynetwork:
 
-`docker run -d --name ubuntu --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
+`$ docker run -d --name ubuntu-sshd --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
-Подключение к контейнеру:
+## Подключение к контейнеру
 
 Запустите Putty укажите IP-адрес и порт 222
 
-Логин root
+Логин root, пароль 654321
 
-Пароль 123456
+## Справка
 
-Docker Hub: https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
+По вопросам использования образа, обращаться на почту anton@devdotnet.org
