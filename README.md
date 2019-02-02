@@ -1,5 +1,13 @@
-## Ubuntu-1604
-Docker base image Ubuntu 16.04 with SSH started
+# Ubuntu-1604
+Docker official Image Ubuntu 16.04 with sshd started
+
+![Docker Stars](https://img.shields.io/docker/stars/devdotnetdotorg/ubuntu-1604-ssh.svg?maxAge=2592000)
+[![MicroBadger](https://images.microbadger.com/badges/image/devdotnetdotorg/ubuntu-1604-ssh.svg)](http://microbadger.com/images/devdotnetdotorg/ubuntu-1604-ssh)
+![Docker pulls](https://img.shields.io/docker/pulls/devdotnetdotorg/ubuntu-1604-ssh.svg)
+
+Links:
+- https://github.com/devdotnetdotorg/ubuntu-1604-ssh
+- https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
 
 Features:
 1) SSH. Allow SSH connection to the container.
