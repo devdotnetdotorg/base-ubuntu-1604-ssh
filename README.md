@@ -42,30 +42,33 @@ Run Putty set you IP address and port 222
 
 login root, password 654321
 
-## Midnight Commander (Visual file manager)
+## Shell
 
-Site: http://midnight-commander.org/
+#### Midnight Commander (Visual file manager)
 
 ![Image of Midnight Commander](https://raw.githubusercontent.com/devdotnetdotorg/ubuntu-1604-ssh/master/screenshots/scr1-ubuntu-1604-ssh.png)
+
+Site: http://midnight-commander.org/
 
 GNU Midnight Commander is a visual file manager, licensed under GNU General Public License and therefore qualifies as Free Software. It's a feature rich full-screen text mode application that allows you to copy, move and delete files and whole directory trees, search for files and run commands in the subshell. Internal viewer and editor are included.
 
 Start: `$ mc`
 
-## htop (an interactive process viewer for Unix)
-
-Site: http://hisham.hm/htop/
+#### htop (an interactive process viewer for Unix)
 
 ![Image of htop](http://hisham.hm/htop/htop-2.0.png)
+
+Site: http://hisham.hm/htop/
 
 This is htop, an interactive process viewer for Unix systems. It is a text-mode application (for console or X terminals) and requires ncurses.
 
 Start: `$ htop`
 
-### Need help?
+## Need help?
 
 If you have questions on how to use the image, please send mail to anton@devdotnet.org
 
+>>>>
 # Образ Ubuntu 16.04 с возможностью подключения по SSH
 
 Возможности:
