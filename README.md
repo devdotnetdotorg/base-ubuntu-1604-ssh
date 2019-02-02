@@ -1,44 +1,70 @@
-# Ubuntu-1604
-Docker official Image Ubuntu 16.04 with sshd started
+# Docker Image Ubuntu 16.04 with sshd
 
 ![Docker Stars](https://img.shields.io/docker/stars/devdotnetdotorg/ubuntu-1604-ssh.svg?maxAge=2592000)
 [![MicroBadger](https://images.microbadger.com/badges/image/devdotnetdotorg/ubuntu-1604-ssh.svg)](http://microbadger.com/images/devdotnetdotorg/ubuntu-1604-ssh)
 ![Docker pulls](https://img.shields.io/docker/pulls/devdotnetdotorg/ubuntu-1604-ssh.svg)
+![](https://img.shields.io/github/last-commit/devdotnetdotorg/ubuntu-1604-ssh.svg?style=flat)
 
-Links:
-- https://github.com/devdotnetdotorg/ubuntu-1604-ssh
-- https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
+Docker official Image Ubuntu 16.04 with sshd started. Password authentication.
 
-Features:
-1) SSH. Allow SSH connection to the container.
-2) Midnight Commander (Visual file manager). Site: http://midnight-commander.org/. Start: $mc
-3) htop (an interactive process viewer for Unix). Site: http://hisham.hm/htop/. Start: $htop
+#### Upstream Links
 
-For SSH used port 22
+* Docker Registry @ [devdotnetdotorg/ubuntu-1604-ssh](https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh)
+* GitHub @ [devdotnetdotorg/ubuntu-1604-ssh](https://github.com/devdotnetdotorg/ubuntu-1604-ssh)
 
-Enviroment password for root:
+## Features
+
+* SSH. Allow SSH connection to the container.
+* Midnight Commander (Visual file manager).
+* htop (an interactive process viewer for Unix).
+
+## Quick Start
+ 
+### Environment Variables
+ 
+Set variable of password for root user:
 
 `-e PASSWORD=123456`
 
-WARNING! Password is 123456 as sample. You must set a different password, not 123456
+**WARNING! Password is 123456 as sample. You must set a different password, not 123456**
 
-Run Container:
+Run container with public port for connections is 222, password for user root is 654321, volume ubuntu-data for transfer data in/out of container:
 
-`docker run -d --name ubuntu -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
+`$ docker run -d --name ubuntu-sshd -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
 For network is mynetwork:
 
-`docker run -d --name ubuntu --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=123456 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
+`$ docker run -d --name ubuntu-sshd --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
 
-Connect to container:
+## Connect to container
 
 Run Putty set you IP address and port 222
 
-login root
+login root, password 654321
 
-password 123456
+## Midnight Commander (Visual file manager)
 
-Docker Hub: https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh
+Site: http://midnight-commander.org/
+
+![Image of Midnight Commander](https://raw.githubusercontent.com/devdotnetdotorg/ubuntu-1604-ssh/master/screenshots/scr1-ubuntu-1604-ssh.png)
+
+GNU Midnight Commander is a visual file manager, licensed under GNU General Public License and therefore qualifies as Free Software. It's a feature rich full-screen text mode application that allows you to copy, move and delete files and whole directory trees, search for files and run commands in the subshell. Internal viewer and editor are included.
+
+Start: `$ mc`
+
+## htop (an interactive process viewer for Unix)
+
+Site: http://hisham.hm/htop/
+
+![Image of htop](http://hisham.hm/htop/htop-2.0.png)
+
+This is htop, an interactive process viewer for Unix systems. It is a text-mode application (for console or X terminals) and requires ncurses.
+
+Start: `$ htop`
+
+### Need help?
+
+If you have questions on how to use the image, please send mail to anton@devdotnet.org
 
 # Образ Ubuntu 16.04 с возможностью подключения по SSH
 
