@@ -1,5 +1,5 @@
 ########################
-# Official Image Ubuntu with ssh
+# Official Image Ubuntu with sshd
 # Allow SSH connection to the container
 # Installed mc,htop
 ########################
