@@ -40,5 +40,6 @@ RUN apt-get autoclean -y && \
 
 #Run
 ADD docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
