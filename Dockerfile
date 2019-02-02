@@ -1,34 +1,43 @@
-# Base container Ubuntu with ssh
+########################
+# Official Image Ubuntu with ssh
 # Allow SSH connection to the container
 # Installed mc,htop
-########################from linux
-
+########################
 FROM ubuntu:16.04
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
 
-RUN apt-get update
-RUN apt-get install -y mc htop 
-# SSH
-RUN apt-get install -y openssh-server
-RUN mkdir /var/run/sshd
-# Config SSH
-RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config 
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config 
-RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-#
-RUN sed -ri 's/^#PasswordAuthentication/PasswordAuthentication/' /etc/ssh/sshd_config
-RUN sed -ri 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-#
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-# Password for root
-ENV PASSWORD root 
-#Set password
-RUN echo 'root:'$PASSWORD |chpasswd
-RUN mkdir /root/.ssh
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#Base
+# Set the locale
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+RUN apt-get update &&  \
+	apt-get install -y locales && \
+	locale-gen en_US.UTF-8 && \
+	update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 && \
+	dpkg-reconfigure --frontend noninteractive locales
+
+#Main
 #Folder Data
 VOLUME /data
 #port SSH
-EXPOSE 22
-# Run SSH
+EXPOSE 22/tcp
+# Needed by scripts
+ENV PASSWORD=123456
+
+#Setup mc,htop,openssh-server
+RUN apt-get install -y mc htop openssh-server
+
+#Clear
+RUN apt-get autoclean -y && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/{cache,log}/ && \
+    rm -rf /var/lib/apt/lists/*.lz4 && \
+    rm -rf /tmp/* /var/tmp/* && \
+    rm -rf /usr/share/doc/ && \
+    rm -rf /usr/share/man/
+
+#Run
+ADD docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
