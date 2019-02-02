@@ -5,6 +5,7 @@
 ########################
 FROM ubuntu:16.04
 MAINTAINER DevDotNet.Org <anton@devdotnet.org>
+LABEL maintainer="DevDotNet.Org <anton@devdotnet.org>"
 
 #Base
 # Set the locale
