@@ -1,16 +1,16 @@
 # Docker Image Ubuntu 16.04 with sshd
 
-![Docker Stars](https://img.shields.io/docker/stars/devdotnetdotorg/ubuntu-1604-ssh.svg?maxAge=2592000)
-[![MicroBadger](https://images.microbadger.com/badges/image/devdotnetdotorg/ubuntu-1604-ssh.svg)](http://microbadger.com/images/devdotnetdotorg/ubuntu-1604-ssh)
-![Docker pulls](https://img.shields.io/docker/pulls/devdotnetdotorg/ubuntu-1604-ssh.svg)
-![](https://img.shields.io/github/last-commit/devdotnetdotorg/ubuntu-1604-ssh.svg?style=flat)
+![Docker Stars](https://img.shields.io/docker/stars/devdotnetorg/ubuntu-1604-ssh.svg?maxAge=2592000)
+[![MicroBadger](https://images.microbadger.com/badges/image/devdotnetorg/ubuntu-1604-ssh.svg)](http://microbadger.com/images/devdotnetorg/ubuntu-1604-ssh)
+![Docker pulls](https://img.shields.io/docker/pulls/devdotnetorg/ubuntu-1604-ssh.svg)
+![](https://img.shields.io/github/last-commit/devdotnetorg/ubuntu-1604-ssh.svg?style=flat)
 
 Docker official Image Ubuntu 16.04 with sshd started. Password authentication.
 
 #### Upstream Links
 
-* Docker Registry @ [devdotnetdotorg/ubuntu-1604-ssh](https://hub.docker.com/r/devdotnetdotorg/ubuntu-1604-ssh)
-* GitHub @ [devdotnetdotorg/ubuntu-1604-ssh](https://github.com/devdotnetdotorg/ubuntu-1604-ssh)
+* Docker Registry @ [devdotnetorg/ubuntu-1604-ssh](https://hub.docker.com/r/devdotnetorg/ubuntu-1604-ssh)
+* GitHub @ [devdotnetorg/ubuntu-1604-ssh](https://github.com/devdotnetorg/ubuntu-1604-ssh)
 
 ## Features
 
@@ -28,11 +28,11 @@ Set variable of password for root user:
 
 Run container with public port for connections is 222, password for user root is 654321, volume ubuntu-data for transfer data in/out of container:
 
-`$ docker run -d --name ubuntu-sshd -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
+`$ docker run -d --name ubuntu-sshd -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetorg/ubuntu-1604-ssh`
 
 For network is mynetwork:
 
-`$ docker run -d --name ubuntu-sshd --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
+`$ docker run -d --name ubuntu-sshd --net mynetwork --ip 172.18.0.20 -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetorg/ubuntu-1604-ssh`
 
 ## Connect to container
 
@@ -44,7 +44,7 @@ login root, password 654321
 
 #### Midnight Commander (Visual file manager)
 
-![Image of Midnight Commander](https://raw.githubusercontent.com/devdotnetdotorg/ubuntu-1604-ssh/master/screenshots/scr1-ubuntu-1604-ssh.png)
+![Image of Midnight Commander](https://raw.githubusercontent.com/devdotnetorg/ubuntu-1604-ssh/master/screenshots/scr1-ubuntu-1604-ssh.png)
 
 Site: http://midnight-commander.org/
 
