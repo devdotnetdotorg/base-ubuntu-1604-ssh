@@ -44,7 +44,7 @@ login root, password 654321
 
 #### Midnight Commander (Visual file manager)
 
-![Image of Midnight Commander](https://raw.githubusercontent.com/devdotnetorg/ubuntu-1604-ssh/master/screenshots/scr1-ubuntu-1604-ssh.png)
+![Image of Midnight Commander](https://raw.githubusercontent.com/devdotnetorg/docker-ubuntu-1604-ssh/master/screenshots/scr1-ubuntu-1604-ssh.png)
 
 Site: http://midnight-commander.org/
 
