@@ -26,8 +26,6 @@ Set variable of password for root user:
 
 `-e PASSWORD=123456`
 
-**WARNING! Password is 123456 as sample. You must set a different password, not 123456**
-
 Run container with public port for connections is 222, password for user root is 654321, volume ubuntu-data for transfer data in/out of container:
 
 `$ docker run -d --name ubuntu-sshd -p 222:22 -e PASSWORD=654321 -v ubuntu-data:/data devdotnetdotorg/ubuntu-1604-ssh`
@@ -87,7 +85,6 @@ If you have questions on how to use the image, please send mail to anton@devdotn
 
 `-e PASSWORD=123456`
 
-**ВНИМАНИЕ! Пароль 123456 указан для примера. Вам необходимо вместо 123456, указать любой свой другой пароль**
 
 Запуск контейнера, внешний порт 222, пароль для пользователя root - 654321, том данных ubuntu-data для передачи данных из/в окружение контейнера:
 
